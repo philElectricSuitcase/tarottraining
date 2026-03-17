@@ -26,6 +26,7 @@ interface ContactModalProps {
   open: boolean;
   onClose: () => void;
   selectedPackage?: string | null;
+  defaultMessage?: string;
 }
 
 const StyledTextField = styled(TextField)({
@@ -45,26 +46,34 @@ const SubmitButton = styled(Button)({
   "&:hover": { backgroundColor: "#e65100" },
 });
 
-const ContactModal: React.FC<ContactModalProps> = ({ open, onClose, selectedPackage }) => {
+const ContactModal: React.FC<ContactModalProps> = ({ open, onClose, selectedPackage, defaultMessage }) => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     company: "",
     position: "",
     phone: "",
-    message: selectedPackage ? `I am interested in the ${selectedPackage} package.` : "",
+    message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
 
   React.useEffect(() => {
-    if (open && selectedPackage) {
+    if (open) {
+      let messageText = "";
+      
+      if (selectedPackage) {
+        messageText = `I am interested in the ${selectedPackage} package.`;
+      } else if (defaultMessage) {
+        messageText = defaultMessage;
+      }
+      
       setFormData((prev) => ({
         ...prev,
-        message: `I am interested in the ${selectedPackage} package.`,
+        message: messageText,
       }));
     }
-  }, [open, selectedPackage]);
+  }, [open, selectedPackage, defaultMessage]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

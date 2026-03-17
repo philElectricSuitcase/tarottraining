@@ -2,19 +2,20 @@ import type { ScheduleDay } from "../types";
 
 export const SCHEDULE_DATA: ScheduleDay[] = [
   {
-    day: "Day 1 - Foundations",
-    title: "26 August 2026 - Arrival & Mind Declutter",
+    day: "Day 1 - Introduction to Tarot",
+    title: "18 April 2026 - Live Online Tarot Workshop",
+    domain: "tarot",
     sessions: [
       {
         session: 1,
         activities: [
           {
-            title: "Welcome, Check-in, Registering and Meeting Other Delegates",
+            title: "Welcome & Introductions",
             keyPoints: [
-              "Welcome & Check-in (day access): Coffee/tea, quick venue orientation, facilities, health & safety",
-              "Registration for people in the residential programme",
-              "Opportunity to meet other delegates informally",
-              "Refreshments provided"
+              "Welcome to the live 2-hour Zoom workshop",
+              "Quick introduction to the session structure and what to expect",
+              "Participant introductions and intentions for joining",
+              "Overview of optional practical participation during the workshop"
             ],
             objectives: [
               "Build Trust",
@@ -27,12 +28,17 @@ export const SCHEDULE_DATA: ScheduleDay[] = [
         session: 2,
         activities: [
           {
-            title: "Orientation & Venue Overview",
+            title: "My Background",
             keyPoints: [
-              "Overview of the retreat venue and facilities",
-              "Health and safety briefing"
+              "Introduction to Phil Macleod as host",
+              "Background as Thought Leader | Thought Reader",
+              "Personal journey with tarot and intuitive work",
+              "How tarot can support reflection, insight, and self-development"
             ],
-            objectives: []
+            objectives: [
+              "Build Trust",
+              "Reading with Confidence"
+            ]
           }
         ]
       },
@@ -40,15 +46,17 @@ export const SCHEDULE_DATA: ScheduleDay[] = [
         session: 3,
         activities: [
           {
-            title: "Setting the Scene",
+            title: "Tarot History & the Nicolas Conver Deck",
             keyPoints: [
-              "Distribution of luxury welcome packs: retreat journal, Thought Reader toolset",
-              "Overview of retreat objectives and structure",
-              "Introduction to core methodology (mindfulness, NLP, hypnosis, reflection)"
+              "Introduction to the history of tarot",
+              "Overview of traditional tarot structure and origins",
+              "Exploration of the Nicolas Conver Tarot de Marseille deck",
+              "Why the Nicolas Conver deck is powerful for intuition and symbolism",
+              "How to begin connecting with a tarot deck as a beginner"
             ],
             objectives: [
-              "Decluttering Your Mind",
-              "Setting Achievable Goals"
+              "Understanding Tarot Foundations",
+              "Developing Intuition"
             ]
           }
         ]
@@ -57,15 +65,18 @@ export const SCHEDULE_DATA: ScheduleDay[] = [
         session: 4,
         activities: [
           {
-            title: "Reading the Room",
+            title: "The Major Arcana",
             keyPoints: [
-              "Delegates introduce themselves",
-              "Share what they are looking to achieve from the course",
-              "Share one specific personal or professional challenge they want to overcome"
+              "Introduction to the Major Arcana and its significance",
+              "Understanding the Fool's Journey as a framework",
+              "Key archetypes, themes, and symbolism in the Major Arcana",
+              "Beginner-friendly guidance on interpreting Major Arcana cards",
+              "How the Major Arcana can support personal insight and reflection"
             ],
             objectives: [
-              "Build Trust",
-              "Improve Communication"
+              "Understanding Tarot Foundations",
+              "Developing Intuition",
+              "Reading with Confidence"
             ]
           }
         ]
@@ -74,9 +85,19 @@ export const SCHEDULE_DATA: ScheduleDay[] = [
         session: 5,
         activities: [
           {
-            title: "Lunch & Networking",
-            keyPoints: ["Lunch / Networking"],
-            objectives: ["Build Trust"]
+            title: "Simple Spreads & Practice Readings",
+            keyPoints: [
+              "Introduction to a few simple beginner-friendly tarot spreads",
+              "Guided practice pulling cards during the session",
+              "Optional hands-on participation for attendees who want to join in",
+              "Test readings to build confidence and familiarity",
+              "Tips for reading symbolically and intuitively without overthinking"
+            ],
+            objectives: [
+              "Developing Intuition",
+              "Reading with Confidence",
+              "Applying Tarot Practically"
+            ]
           }
         ]
       },
@@ -84,258 +105,18 @@ export const SCHEDULE_DATA: ScheduleDay[] = [
         session: 6,
         activities: [
           {
-            title: "Mindset Reset",
+            title: "Q&A, Wrap-up & Next Steps",
             keyPoints: [
-              "Group grounding and introductions reinforcement",
-              "Hypnosis to release mental clutter",
-              "Body scan mindfulness",
-              "Understanding stress and its effects",
-              "Tools for mental declutter, removing stress, and gaining instant clarity for issue understanding and resolution"
+              "Open Q&A with participants",
+              "Final reflections and encouragement for continued tarot practice",
+              "Reminder that a full recording of the session will be provided",
+              "Handouts will be shared after the event covering all topics in more detail",
+              "Guidance on what participants may want if they choose to continue learning with their own deck"
             ],
             objectives: [
-              "Decluttering Your Mind",
-              "Dealing with Stress"
-            ]
-          }
-        ]
-      },
-      {
-        session: 7,
-        activities: [
-          {
-            title: "Free Time / Leisure",
-            keyPoints: ["Free Time / Leisure (room check-in available for residential guests)"],
-            objectives: []
-          }
-        ]
-      },
-      {
-        session: 8,
-        activities: [
-          {
-            title: "Welcome Dinner & Evening Reflection",
-            keyPoints: [
-              "Welcome Dinner: Informal networking & discussion on retreat intentions",
-              "Evening Reflection & Journaling: Guided reflection on day's mental blocks",
-              "Hypnosis for deep relaxation before sleep",
-              "Communication challenge activity to reinforce connection"
-            ],
-            objectives: [
-              "Build Trust",
               "Improve Communication",
-              "Decluttering Your Mind",
-              "Dealing with Stress"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    day: "Day 2 - Deep Tools",
-    title: "27 August 2026 - Clarity, Leadership & Resilience",
-    sessions: [
-      {
-        session: 1,
-        activities: [
-          {
-            title: "Morning Activation",
-            keyPoints: [
-              "Morning Mindfulness: meditation or nature walk",
-              "NLP anchoring for calm focused state"
-            ],
-            objectives: [
-              "Dealing with Stress",
-              "Decluttering Your Mind"
-            ]
-          }
-        ]
-      },
-      {
-        session: 2,
-        activities: [
-          {
-            title: "Breakfast",
-            keyPoints: ["Breakfast"],
-            objectives: []
-          }
-        ]
-      },
-      {
-        session: 3,
-        activities: [
-          {
-            title: "Understanding Yourself and Your Team",
-            keyPoints: [
-              "Leadership presence drills & role-play",
-              "Emotional intelligence exercises to build trust and recognition",
-              "Reflective journaling on leadership impact"
-            ],
-            objectives: [
-              "Addressing Imposter Syndrome",
-              "Build Trust",
-              "Improve Communication"
-            ]
-          }
-        ]
-      },
-      {
-        session: 4,
-        activities: [
-          {
-            title: "Building Trust",
-            keyPoints: [
-              "Exercises focused on valuing yourself and your team",
-              "Group activities to strengthen interpersonal trust"
-            ],
-            objectives: [
-              "Build Trust",
-              "Improve Communication"
-            ]
-          }
-        ]
-      },
-      {
-        session: 5,
-        activities: [
-          {
-            title: "Lunch & Networking",
-            keyPoints: ["Lunch / Networking"],
-            objectives: ["Build Trust"]
-          }
-        ]
-      },
-      {
-        session: 6,
-        activities: [
-          {
-            title: "Imposter Syndrome",
-            keyPoints: [
-              "Addressing imposter syndrome through reflective exercises",
-              "NLP reframing techniques to transform limiting beliefs"
-            ],
-            objectives: [
-              "Addressing Imposter Syndrome",
-              "Dealing with Stress"
-            ]
-          }
-        ]
-      },
-      {
-        session: 7,
-        activities: [
-          {
-            title: "Setting Goals Part 1",
-            keyPoints: [
-              "NLP goal-mapping for priorities",
-              "Hypnosis visualization of desired outcomes",
-              "Communication exercise to articulate goals clearly"
-            ],
-            objectives: [
-              "Setting Achievable Goals",
-              "Improve Communication"
-            ]
-          }
-        ]
-      },
-      {
-        session: 8,
-        activities: [
-          {
-            title: "Dinner (Residential Package)",
-            keyPoints: ["Dinner for those on the residential package"],
-            objectives: []
-          }
-        ]
-      },
-      {
-        session: 9,
-        activities: [
-          {
-            title: "Fireside Reflection (Residential Package)",
-            keyPoints: [
-              "Hypnosis & mindfulness meditation on personal purpose",
-              "Journaling prompts to reinforce clarity & actionable insights"
-            ],
-            objectives: [
-              "Dealing with Stress",
-              "Decluttering Your Mind",
-              "Setting Achievable Goals"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    day: "Day 3 - Integration",
-    title: "28 August 2026 - Permanent Shift & Departure",
-    sessions: [
-      {
-        session: 1,
-        activities: [
-          {
-            title: "Optional Morning Practice & Breakfast",
-            keyPoints: [
-              "Optional Early Morning Mindfulness / Gratitude Walk: Walking meditation on gratitude & intention-setting, NLP anchoring to capture positive state for daily use",
-              "Breakfast"
-            ],
-            objectives: [
-              "Dealing with Stress",
-              "Decluttering Your Mind"
-            ]
-          }
-        ]
-      },
-      {
-        session: 2,
-        activities: [
-          {
-            title: "Integration & Action Planning Workshop",
-            keyPoints: [
-              "Bring all insights together – Create 90-day action plan (SMART steps, milestones, tracking, celebrations)",
-              "Reflection & hypnosis to internalize tools for ongoing clarity & resilience",
-              "Communication practice: Craft clear personal/professional mission statement"
-            ],
-            objectives: [
-              "Setting Achievable Goals",
-              "Improve Communication",
-              "All principles reinforced"
-            ]
-          }
-        ]
-      },
-      {
-        session: 3,
-        activities: [
-          {
-            title: "Checkout & Farewell Circle",
-            keyPoints: [
-              "Checkout / Luggage Storage",
-              "Farewell Circle & Closing Ceremony: Share insights & commitments, Group reflection on transformation achieved"
-            ],
-            objectives: [
-              "Build Trust",
-              "Improve Communication",
-              "Addressing Imposter Syndrome (celebrating confidence gains)"
-            ]
-          }
-        ]
-      },
-      {
-        session: 4,
-        activities: [
-          {
-            title: "Optional Extended Wrap-up & Departure",
-            keyPoints: [
-              "Light lunch, final Q&A, networking, certificates, personal commitments",
-              "Departure"
-            ],
-            objectives: [
-              "Build Trust",
-              "Setting Achievable Goals (final reinforcement)"
+              "Reading with Confidence",
+              "Applying Tarot Practically"
             ]
           }
         ]

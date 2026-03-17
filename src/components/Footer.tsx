@@ -1,6 +1,8 @@
 import React from "react";
-import { Box, Button, Container, Grid, IconButton, Typography } from "@mui/material";
-import { FaEnvelope, FaLinkedin, FaPhone, FaTwitter } from "react-icons/fa";
+import { Box, Button, Container, IconButton, Typography } from "@mui/material";
+import { FaEnvelope, FaLinkedin, FaPhone } from "react-icons/fa";
+import { getFooterContactInfo, getFooterCopyright } from "../constants/page";
+import { getCurrentDomain } from "../utils/domainFilter";
 
 interface FooterProps {
   onRegisterClick: () => void;
@@ -8,6 +10,10 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ onRegisterClick, onTermsClick }) => {
+  const currentDomain = getCurrentDomain();
+  const contactInfo = getFooterContactInfo(currentDomain);
+  const copyrightInfo = getFooterCopyright(currentDomain);
+
   return (
     <Box sx={{ backgroundColor: "#1a237e", color: "white", py: 8 }}>
       <Container maxWidth="lg">
@@ -20,7 +26,7 @@ const Footer: React.FC<FooterProps> = ({ onRegisterClick, onTermsClick }) => {
               <FaPhone style={{ marginRight: 8 }} />
               <Typography
                 component="a"
-                href="tel:+441739416887"
+                href={contactInfo.phoneHref}
                 sx={{
                   color: "white",
                   textDecoration: "none",
@@ -28,14 +34,14 @@ const Footer: React.FC<FooterProps> = ({ onRegisterClick, onTermsClick }) => {
                   "&:hover": { textDecoration: "underline" },
                 }}
               >
-                +44 (0) 7394 168872
+                {contactInfo.phone}
               </Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <FaEnvelope style={{ marginRight: 8 }} />
               <Typography
                 component="a"
-                href="mailto:retreats@thought-reader.co.uk"
+                href={contactInfo.emailHref}
                 sx={{
                   color: "white",
                   textDecoration: "none",
@@ -43,7 +49,7 @@ const Footer: React.FC<FooterProps> = ({ onRegisterClick, onTermsClick }) => {
                   "&:hover": { textDecoration: "underline" },
                 }}
               >
-                retreats@thought-reader.co.uk
+                {contactInfo.email}
               </Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", mt: 2 }}>
@@ -53,7 +59,7 @@ const Footer: React.FC<FooterProps> = ({ onRegisterClick, onTermsClick }) => {
               <IconButton
                 aria-label="LinkedIn"
                 component="a"
-                href="https://www.linkedin.com/in/besthypnotherapist/"
+                href={contactInfo.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{ color: "white" }}
@@ -65,9 +71,9 @@ const Footer: React.FC<FooterProps> = ({ onRegisterClick, onTermsClick }) => {
 
           <Box sx={{ textAlign: { xs: "left", sm: "center" } }}>
             <Typography variant="body2" sx={{ opacity: 0.8 }}>
-              Copyright {new Date().getFullYear()} Leadership Pause Retreat
+              Copyright {copyrightInfo.year} {copyrightInfo.text}
               <br />
-              De Vere Latimer Estate - 26-28 August 2026
+              {copyrightInfo.location} - {copyrightInfo.dates}
             </Typography>
           </Box>
 

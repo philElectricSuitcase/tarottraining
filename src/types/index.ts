@@ -4,6 +4,7 @@ export type InfographicItem = {
   description: string;
   iconName: string;
   color: string;
+  domain?: string;
 };
 
 export type Facilitator = {
@@ -12,6 +13,7 @@ export type Facilitator = {
   bio: string;
   image: string;
   expertise: string;
+  domain?: string;
 };
 
 export type PricingFeature = {
@@ -27,6 +29,8 @@ export type PricingOption = {
   badge?: string;
   highlighted: boolean;
   footnote?: string;
+  paymentLink?: string;
+  domain?: string;
 };
 
 export type ScheduleActivity = {
@@ -44,6 +48,7 @@ export type ScheduleDay = {
   day: string;
   title: string;
   sessions: ScheduleSession[];
+  domain?: string;
 };
 
 export type FormData = {

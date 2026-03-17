@@ -8,34 +8,122 @@ export type RetreatHighlight = {
   text: string;
   color: string;
   isHtml?: boolean;
+  domain?: string;
 };
 
 export const RETREAT_HIGHLIGHTS: RetreatHighlight[] = [
   {
     id: 1,
     icon: MdGroup,
-    text: "Maximum 30 <br>senior leaders",
+    text: "Limited live <br>interactive group",
     color: "#ff6f00",
     isHtml: true,
+    domain: "tarot",
   },
   {
     id: 2,
     icon: FaCalendarAlt,
-    text: "26-28 August 2026 <br> 2 nights luxury stay",
+    text: "18 April 2026 <br> Live 2-hour Zoom session",
     color: "#ff6f00",
     isHtml: true,
+    domain: "tarot",
   },
   {
     id: 3,
     icon: MdLocationOn,
-    text: "All-inclusive: <br> meals, program, <br>estate grounds & facilities",
+    text: "Online experience: <br> live workshop, recording <br> & downloadable handouts",
     color: "#ff6f00",
-     isHtml: true,
-
+    isHtml: true,
+    domain: "tarot",
   },
 ];
 
-export const RETREAT_DESCRIPTION_HEADER = "The constant demands pulling you in every direction, leaving little headspace for what really matters –both at work and in life?";
-export const RETREAT_DESCRIPTION_SUBHEADER = "You're not alone. Many senior professionals reach a point where they need to step back, refocus, and reclaim some proper control.";
-export const RETREAT_DESCRIPTION_BODY = `<strong>Three Days of Clarity and Focus</strong><br>This three-day luxury boutique retreat is set in peaceful countryside, giving you the perfect environment to breathe, reflect, and recharge fully.<p><strong>No distractions.</strong> Just the room to think deeply and reset your priorities.</p><p><strong>Structured for Maximum Impact</strong><br>Over the retreat, you'll engage with proven NLP-inspired techniques, guided hypnosis, and reflective journaling. The goal: quiet the mental noise, sharpen your decision-making, and gain -clear clarity on what truly matters.</p><p><strong>Connect with Exceptional Leaders</strong><br>Small group mastery sessions bring together senior executives from diverse industries. The insights from these conversations are often the most powerful, offering perspectives you wouldn't encounter elsewhere.</p><p><strong>Your Reset Awaits</strong><br>Sometimes a fresh perspective is all it takes. Step away, recharge, and return to your role with renewed focus and presence.</p>`;
-export const RETREAT_DESCRIPTION_BODY_2 = `<p>This retreat is more than just a getaway—it's a transformative experience designed specifically for senior leaders who are ready to make a real change.</p><p><strong>What makes this different:</strong></p><p>Unlike generic wellness retreats, this programme combines cutting-edge psychological techniques with practical leadership development. You'll work with proven NLP-inspired methodologies that have helped thousands of executives break through mental barriers and unlock their full potential.</p><p><strong>The power of small groups:</strong></p><p>With a maximum of 30 participants, you'll have genuine space to work deeply. No large conference-style sessions. Instead, you'll benefit from intimate group work where real breakthroughs happen. The diversity of the group—senior leaders from different industries, sectors, and backgrounds—creates a unique learning environment. You'll gain fresh perspectives from people facing completely different challenges, yet sharing the same core struggles around pace, pressure, and priorities.</p><p><strong>Practical tools you'll take home:</strong></p><p>This isn't theoretical. Every technique, every exercise, every insight is designed to be immediately applicable to your real life. You'll leave with a personal toolkit—specific practices, frameworks, and strategies you can implement straight away. Many participants report measurable shifts in their decision-making, stress levels, and leadership presence within weeks of returning.</p><p><strong>The setting matters:</strong></p><p>De Vere Latimer Estate isn't just a venue—it's part of the experience. The historic grounds, the peaceful countryside, the quality of the facilities—all of it creates the right environment for genuine reflection and reset. You'll have space to think, to breathe, to reconnect with what matters.</p><p><strong>Optional one-to-one coaching:</strong></p><p>If you want to go deeper on specific challenges, one-to-one coaching sessions are available. This gives you the chance to work directly on your unique situation—whether that's leadership presence, decision-making under pressure, or navigating a specific transition.</p><p><strong>Networking with peers:</strong></p><p>Beyond the formal programme, there's genuine time to connect with other senior leaders. These conversations often prove as valuable as the structured sessions. You'll build relationships with people who truly understand the pressures and opportunities of senior leadership.</p><p>This is your opportunity to step back, reset, and return to your role with renewed clarity, stronger presence, and the resilience to lead on your own terms.</p>`;
+export type RetreatDescriptionContent = {
+  sectionTitle: string;
+  header: string;
+  subheader: string;
+  domain?: string;
+  highlightsPosition?: "image" | "highlights";
+};
+
+export const RETREAT_DESCRIPTION_CONTENT: RetreatDescriptionContent[] = [
+  {
+    sectionTitle: "What if you could learn to read the signals you're already sensing?",
+    header: "Ever felt drawn to tarot but unsure where to start or how to read the cards with confidence?",
+    subheader: "This beginner-friendly workshop gives you a clear, practical introduction—no overwhelm, no guesswork.",
+    domain: "tarot",
+    highlightsPosition: "highlights",
+  },
+];
+
+// Helper function to get description content by domain
+export const getRetreatDescriptionContent = (domain: string): RetreatDescriptionContent => {
+  const content = RETREAT_DESCRIPTION_CONTENT.find((item) => item.domain === domain);
+  return content || RETREAT_DESCRIPTION_CONTENT[0]; // Return first item as default
+};
+
+// Legacy exports for backward compatibility
+export const RETREAT_DESCRIPTION_HEADER =
+  "Ever felt drawn to tarot but unsure where to start or how to read the cards with confidence?";
+
+export const RETREAT_DESCRIPTION_SUBHEADER =
+  "This beginner-friendly workshop gives you a clear, practical introduction—no overwhelm, no guesswork.";
+
+export const RETREAT_DESCRIPTION_BODY = `
+<strong>Two Hours to Unlock Tarot</strong><br>
+Join a live, guided session designed to help you understand tarot in a simple, intuitive way.<p><strong>No experience needed.</strong> Just curiosity and an open mind.</p>
+
+<p><strong>Learn by Doing</strong><br>
+This is not just theory. You’ll explore the Major Arcana, learn simple spreads, and have the opportunity to practice reading cards in real time with guidance.</p>
+
+<p><strong>Discover Your Intuition</strong><br>
+Tarot isn’t about memorising meanings—it’s about learning how to see, feel, and interpret. You’ll begin developing your own intuitive reading style from day one.</p>
+
+<p><strong>Accessible, Practical, Clear</strong><br>
+Everything is broken down into simple steps so you can start using tarot immediately, whether for personal insight or deeper reflection.</p>
+`;
+
+export const RETREAT_DESCRIPTION_BODY_2 = `
+<p>This workshop is designed to give you a strong, confident foundation in tarot—without overwhelm.</p>
+
+<p><strong>What makes this different:</strong></p>
+<p>Rather than focusing on rigid definitions, this session teaches you how to read tarot naturally and intuitively. You'll learn how to connect with the cards, understand symbolism, and trust your interpretations.</p>
+
+<p><strong>Beginner-friendly structure:</strong></p>
+<p>We focus on the essentials—tarot history, the Nicolas Conver Tarot de Marseille deck, the Major Arcana, and simple spreads—so you leave with clarity, not confusion.</p>
+
+<p><strong>Hands-on experience:</strong></p>
+<p>You'll have the option to pull cards and practice during the session. This is where real learning happens—by doing, not just watching.</p>
+
+<p><strong>Take it with you:</strong></p>
+<p>You'll receive a full recording of the session plus detailed handouts, so you can revisit everything and continue building your confidence after the workshop.</p>
+
+<p><strong>Your next step into tarot:</strong></p>
+<p>Whether you're exploring tarot out of curiosity or looking to develop a deeper intuitive practice, this session gives you the tools to begin with confidence.</p>
+`;
+
+export type RetreatImage = {
+  domain: string;
+  image: string;
+  isLocal: boolean;
+  imageAlt: string;
+};
+
+export const RETREAT_IMAGES: RetreatImage[] = [
+  {
+    domain: "tarot",
+    image: "tarot_death.png",
+    isLocal: true,
+    imageAlt: "Taror for fun",
+  },
+];
+
+/**
+ * Get retreat image by domain
+ * @param domain - The current domain
+ * @returns RetreatImage object or first item as default
+ */
+export const getRetreatImage = (domain: string): RetreatImage => {
+  const image = RETREAT_IMAGES.find((item) => item.domain === domain);
+  return image || RETREAT_IMAGES[0]; // Return first item as default
+};

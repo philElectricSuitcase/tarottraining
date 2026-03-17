@@ -15,6 +15,8 @@ import { styled } from "@mui/system";
 import { MdEventAvailable } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
+import { getHeaderData } from "../constants/page";
+import { getCurrentDomain } from "../utils/domainFilter";
 
 interface HeaderProps {
   onScheduleClick: () => void;
@@ -53,6 +55,8 @@ const Header: React.FC<HeaderProps> = ({
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const currentDomain = getCurrentDomain();
+  const headerData = getHeaderData(currentDomain);
 
   const handleMenuClose = () => {
     setMobileMenuOpen(false);
@@ -95,7 +99,7 @@ const Header: React.FC<HeaderProps> = ({
             fontSize: { xs: "14px", sm: "16px", md: "18px" },
           }}
         >
-          Thought Leader | Thought Reader Retreat - 26-28 August 2026
+          {headerData.title} - {headerData.subtitle}
         </Typography>
 
         {isMobile ? (

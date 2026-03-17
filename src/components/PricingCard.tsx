@@ -132,23 +132,48 @@ const PricingCard: React.FC<PricingCardProps> = ({ option, onRegisterClick }) =>
             {option.footnote}
           </Typography>
         )}
-        <Button
-          fullWidth
-          variant="contained"
-          size="large"
-          onClick={() => onRegisterClick(option.name)}
-          sx={{
-            mt: 4,
-            py: 2,
-            backgroundColor: option.highlighted ? "#ff6f00" : "#1a237e",
-            fontSize: "1.1rem",
-            "&:hover": {
-              backgroundColor: option.highlighted ? "#e65100" : "#0d1b5e",
-            },
-          }}
-        >
-          Register {option.name}
-        </Button>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 4 }}>
+          {option.paymentLink && (
+            <Button
+              fullWidth
+              variant="contained"
+              size="large"
+              href={option.paymentLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                py: 2,
+                backgroundColor: option.highlighted ? "#ff6f00" : "#1a237e",
+                fontSize: "1.1rem",
+                fontWeight: 600,
+                "&:hover": {
+                  backgroundColor: option.highlighted ? "#e65100" : "#0d1b5e",
+                },
+              }}
+            >
+              Pay Now
+            </Button>
+          )}
+          <Button
+            fullWidth
+            variant={option.paymentLink ? "outlined" : "contained"}
+            size="large"
+            onClick={() => onRegisterClick(option.name)}
+            sx={{
+              py: 2,
+              backgroundColor: option.paymentLink ? "transparent" : (option.highlighted ? "#ff6f00" : "#1a237e"),
+              color: option.paymentLink ? (option.highlighted ? "#ff6f00" : "#1a237e") : "white",
+              borderColor: option.highlighted ? "#ff6f00" : "#1a237e",
+              fontSize: "1.1rem",
+              fontWeight: 600,
+              "&:hover": {
+                backgroundColor: option.paymentLink ? (option.highlighted ? "rgba(255, 111, 0, 0.1)" : "rgba(26, 35, 126, 0.1)") : (option.highlighted ? "#e65100" : "#0d1b5e"),
+              },
+            }}
+          >
+            {option.paymentLink ? "Register" : `Register ${option.name}`}
+          </Button>
+        </Box>
       </CardContent>
     </PricingCardStyled>
   );

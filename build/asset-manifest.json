@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e6c13ad2.css",
+    "main.js": "/static/js/main.b5a74871.js",
+    "static/js/453.a8f94603.chunk.js": "/static/js/453.a8f94603.chunk.js",
+    "static/media/tarot_death.jpg": "/static/media/tarot_death.ebbf24f087018742f4af.jpg",
+    "static/media/tarot_background.png": "/static/media/tarot_background.d7284053291fcdf44179.png",
+    "static/media/DSC03588.jpg": "/static/media/DSC03588.9b1f8c21a7b2385978c6.jpg",
+    "static/media/tltr.ico": "/static/media/tltr.5ce9d5c125c0b2ba7fd6.ico",
+    "index.html": "/index.html",
+    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
+    "main.b5a74871.js.map": "/static/js/main.b5a74871.js.map",
+    "453.a8f94603.chunk.js.map": "/static/js/453.a8f94603.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.b5a74871.js"
+  ]
+}

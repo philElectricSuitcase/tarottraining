@@ -2,52 +2,43 @@ import type { PricingOption } from "../types";
 
 export const PRICING_OPTIONS: PricingOption[] = [
   {
-    name: "Non-Residential (Day Program)",
-    description: "Full daytime access for busy executives and London-based leaders seeking high-impact development without overnight commitment.",
-    price: "£1,525 per person",
+    name: "Standard Access",
+    description:
+      "Join the live 2-hour Introduction to Tarot workshop on Zoom. Perfect for beginners wanting a clear, practical introduction.",
+    price: "£5 per person",
     features: [
-      { icon: "Event", text: "Full 3-day daytime access to the immersive Thought Reader retreat" },
-      { icon: "Psychology", text: "All workshops, sessions, and facilitated leadership activities" },
-      { icon: "Restaurant", text: "Daily lunches, refreshments, and welcome dinner included" },
-      { icon: "Book", text: "Personal retreat journal + Thought Reader permanence toolkit" },
+      { icon: "Event", text: "Live 2-hour interactive Zoom workshop" },
+      { icon: "Psychology", text: "Beginner-friendly guidance on tarot fundamentals & intuition" },
+      { icon: "Style", text: "Introduction to the Major Arcana & symbolism" },
+      { icon: "AutoAwesome", text: "Guided practice with simple spreads (optional participation)" },
+      { icon: "VideoLibrary", text: "Full recording provided after the session" },
+      { icon: "Description", text: "Digital handouts covering all topics in more depth" }
     ],
-    badge: "Flexible",
-    highlighted: false,
-    footnote: "Perfect for senior professionals balancing schedules."
-  },
-  {
-    name: "Standard Residential",
-    description: "Complete immersion with luxury accommodation and full support – designed for leaders committed to deep, measurable transformation.",
-    price: "£2,595 per person",
-    features: [
-      { icon: "Hotel", text: "3 days / 2 nights in luxury accommodation" },
-      {icon: "IoFitnessOutline", text: "Full use of fitness and wellness facilities" },
-      { icon: "Psychology", text: "All workshops, coaching sessions, and retreat activities" },
-      { icon: "RestaurantMenu", text: "All meals and refreshments (breakfast, lunches, dinners)" },
-      { icon: "Book", text: "Personal journal + permanence toolkit" },
-      { icon: "SupportAgent", text: "30-day post-retreat support framework (resources & accountability)" },
-      { icon: "WorkspacePremium", text: "Certificate of completion" },
-      { icon: "TrackChanges", text: "Measurable change framework to track leadership impact" },
-      { icon: "Group", text: "Intimate cohort – maximum 30 senior participants" }
-    ],
-    badge: undefined,
+    badge: "Popular",
     highlighted: true,
-    footnote: "Early Bird (book by 24th March 2026): £2,200 | Group (2+): £2,090 per person"
+    footnote:
+      "Ideal if you already have a deck or just want to explore tarot.",
+    paymentLink: "https://monzo.com/pay/r/thought-leader-thought-re_x0QHDuxnyPkmUS",
+    domain: "tarot"
   },
   {
-    name: "VIP Residential",
-    description: "Elite, high-touch experience for executives seeking maximum personal and leadership leverage from the retreat.",
-    price: "£3,195 per person",
+    name: "Workshop + Tarot Deck",
+    description:
+      "Everything in Standard Access plus your own Nicolas Conver Tarot de Marseille deck to learn and practice with.",
+    price: "£45 per person",
     features: [
-      { icon: "CheckCircle", text: "Everything included in Standard Residential" },
-      { icon: "CoPresent", text: "Private 1:1 coaching session (60 minutes) – tailored to your strategic goals" },
-      { icon: "SupportAgent", text: "Enhanced ipost-retreat follow-up (additional in person or calls)" },
-      { icon: "PriorityHigh", text: "Priority placement and exclusive materials" },
-      { icon: "KingBed", text: "Upgraded room category (subject to availability)" },
-      { icon: "Diamond", text: "Deeper investment in personal transformation and sustained executive performance" }
+      { icon: "CheckCircle", text: "Full access to the live 2-hour workshop" },
+      { icon: "Style", text: "Nicolas Conver Tarot de Marseille deck included" },
+      { icon: "LocalShipping", text: "Deck shipped to you before or shortly after the session" },
+      { icon: "AutoAwesome", text: "Hands-on participation with your own cards during practice" },
+      { icon: "VideoLibrary", text: "Full session recording + replay access" },
+      { icon: "Description", text: "Extended handouts and learning materials" }
     ],
-    badge: "Premium",
+    badge: "Best Value",
     highlighted: false,
-    footnote: "Limited places available – recommended for leaders who prioritise individualised / personalised acceleration."
+    footnote:
+      "Perfect if you want the full experience and a deck to continue your practice.",
+    paymentLink: "https://monzo.com/pay/r/thought-leader-thought-re_TKgQHAJC9T8mvg",
+    domain: "tarot"
   }
 ];
