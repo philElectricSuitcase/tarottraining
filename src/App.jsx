@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import {
   ArrowRight,
   Brain,
@@ -75,8 +76,80 @@ function TarotGlyph({ variant = 0 }) {
 function App() {
   const [navOpen, setNavOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    interest: 'Personal reading',
+    message: ''
+  });
+  const [submitState, setSubmitState] = useState({ type: 'idle', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const emailJsPublicKey = import.meta.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+  const emailJsServiceId = import.meta.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const emailJsTemplateId = import.meta.env.REACT_APP_EMAILJS_TEMPLATE_ID;
 
   const closeNav = () => setNavOpen(false);
+
+  const onFormValueChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((currentData) => ({
+      ...currentData,
+      [name]: value
+    }));
+  };
+
+  const onEnquirySubmit = async (event) => {
+    event.preventDefault();
+
+    if (!emailJsPublicKey || !emailJsServiceId || !emailJsTemplateId) {
+      setSubmitState({
+        type: 'error',
+        message: 'Email is not configured yet. Add REACT_APP_EMAILJS_SERVICE_ID and REACT_APP_EMAILJS_TEMPLATE_ID to your .env file.'
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitState({ type: 'idle', message: '' });
+
+    try {
+      await emailjs.send(
+        emailJsServiceId,
+        emailJsTemplateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          interest: formData.interest,
+          message: formData.message
+        },
+        {
+          publicKey: emailJsPublicKey
+        }
+      );
+
+      setSubmitState({
+        type: 'success',
+        message: 'Thanks, your enquiry has been sent.'
+      });
+      setFormData({
+        name: '',
+        email: '',
+        interest: 'Personal reading',
+        message: ''
+      });
+    } catch (error) {
+      const errorStatus = error?.status ? ` (${error.status})` : '';
+      const errorText = error?.text ? ` ${error.text}` : '';
+      setSubmitState({
+        type: 'error',
+        message: `Sorry, there was a problem sending your enquiry${errorStatus}.${errorText}`
+      });
+      console.error('EmailJS send failed:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="site-shell">
@@ -251,20 +324,20 @@ function App() {
                 <span><Users size={18}/>Private workshops</span>
               </div>
             </div>
-            <form className="enquiry-form" onSubmit={(e) => e.preventDefault()}>
-              <label>Name<input type="text" placeholder="Your name" /></label>
-              <label>Email<input type="email" placeholder="you@example.com" /></label>
+            <form className="enquiry-form" onSubmit={onEnquirySubmit}>
+              <label>Name<input type="text" name="name" value={formData.name} onChange={onFormValueChange} placeholder="Your name" required /></label>
+              <label>Email<input type="email" name="email" value={formData.email} onChange={onFormValueChange} placeholder="you@example.com" required /></label>
               <label>I’m interested in
-                <select defaultValue="Personal reading">
+                <select name="interest" value={formData.interest} onChange={onFormValueChange}>
                   <option>Personal reading</option>
                   <option>Tarot for mindfulness</option>
                   <option>Tarot training 1-2-1</option>
                   <option>Tarot workshop</option>
                 </select>
               </label>
-              <label>Tell me a little more<textarea rows="4" placeholder="What would you like to explore?" /></label>
-              <button className="btn btn-gold" type="submit">Send enquiry <ArrowRight size={17}/></button>
-              <small>Demo form — connect this to your preferred form handler before launch.</small>
+              <label>Tell me a little more<textarea rows="4" name="message" value={formData.message} onChange={onFormValueChange} placeholder="What would you like to explore?" required /></label>
+              <button className="btn btn-gold" type="submit" disabled={isSubmitting}>{isSubmitting ? 'Sending enquiry...' : 'Send enquiry'} <ArrowRight size={17}/></button>
+              {submitState.message && <small className={submitState.type === 'error' ? 'form-message error' : 'form-message success'}>{submitState.message}</small>}
             </form>
           </div>
         </section>
