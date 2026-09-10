@@ -211,6 +211,7 @@ function App() {
             <div className="manifesto-copy">
               <p>When we are close to a problem, we tend to look at it from the same angle and arrive at the same conclusions. Tarot interrupts that loop.</p>
               <p>Phil uses the imagery, symbolism and story of the cards as prompts. A card does not hand you an answer; it creates a question, a perspective or a possibility that you can explore.</p>
+              <p>In that sense, the cards can act as a kind of mirror - helping people articulate what they may already know or feel, but have not yet fully recognised.</p>
               <div className="principle"><Compass/><span><strong>Clarity over certainty.</strong> You make the decision. The cards simply help widen the view.</span></div>
             </div>
           </div>
@@ -219,7 +220,7 @@ function App() {
         <section id="services" className="services section-pad">
           <div className="section-head">
             <div><div className="section-label">Ways to work with Phil</div><h2>Four ways to explore tarot.</h2></div>
-            <p>Choose a personal reflective session, learn to read for yourself, or bring tarot into a group setting.</p>
+            <p>Phil works with individuals, entrepreneurs and professionals, using tarot as a reflective tool to explore decisions, periods of change and situations where it can be difficult to see the way forward.</p>
           </div>
           <div className="service-grid">
             {services.map((s, i) => {
