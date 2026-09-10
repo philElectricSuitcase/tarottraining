@@ -240,6 +240,15 @@ function App() {
           </div>
         </section>
 
+        <section className="mirror-section section-pad">
+          <div className="mirror-inner">
+            <div className="section-label">Phil's perspective</div>
+            <h2>I believe tarot is a mirror into your thoughts.</h2>
+            <p>It can help you name what feels half-formed, bring hidden assumptions into view and make sense of moments when your next step is not obvious.</p>
+            <p>The cards do not decide for you. They create space to think, feel and choose with more clarity.</p>
+          </div>
+        </section>
+
         <section className="quote-band">
           <div className="quote-mark">“</div>
           <blockquote>Sometimes just stopping, pausing and reframing the situation can bring more clarity — and, in turn, better results.</blockquote>
