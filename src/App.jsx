@@ -63,6 +63,29 @@ const faqs = [
   ['Can I book online?', 'Yes. Personal readings and one-to-one tuition can be delivered online, and workshops can be arranged in person or virtually depending on the group.']
 ];
 
+const testimonials = [
+  {
+    quote: 'He is incredibly warm, kind and engaging, and I found his approach to tarot both thoughtful and unique.',
+    author: 'Richa'
+  },
+  {
+    quote: 'I was suprised how acurate and insightful Phil was.',
+    author: 'Polly'
+  },
+  {
+    quote: 'I was sceptical to begin with but the session really helped me see clearly.',
+    author: 'Megan'
+  },
+  {
+    quote: 'I really enjoyed Phil\'s workshop. It really gave me confidence in reading Tarot.',
+    author: 'Ade'
+  },
+  {
+    quote: 'Phil\'s course gave me the confidence to do my first reading within a day of the course.',
+    author: 'David'
+  }
+];
+
 function TarotGlyph({ variant = 0 }) {
   const glyphs = [
     <><circle cx="50" cy="39" r="15"/><path d="M50 14v8M50 56v29M31 70h38M37 85h26"/><path d="M24 39h11M65 39h11"/></>,
@@ -253,6 +276,23 @@ function App() {
           <div className="quote-mark">“</div>
           <blockquote>Sometimes just stopping, pausing and reframing the situation can bring more clarity — and, in turn, better results.</blockquote>
           <div className="quote-source">Phil Macleod · 9AM Business</div>
+        </section>
+
+        <section className="testimonials section-pad" aria-label="Client quotes">
+          <div className="section-head compact">
+            <div><div className="section-label">Client feedback</div><h2>What people are saying.</h2></div>
+          </div>
+          <div className="testimonial-marquee">
+            <div className="testimonial-track">
+              {[...testimonials, ...testimonials].map((item, index) => (
+                <figure className="testimonial-card" key={`${item.author}-${index}`}>
+                  <Quote size={22} />
+                  <blockquote>{item.quote}</blockquote>
+                  <figcaption>— {item.author}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
         </section>
 
         <section id="about" className="about section-pad">
