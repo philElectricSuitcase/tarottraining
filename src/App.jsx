@@ -49,7 +49,7 @@ const services = [
     kicker: '04',
     icon: MoonStar,
     title: 'Personal Reading',
-    summary: 'A calm one-to-one space to explore a question, decision or transition with curiosity rather than prediction.',
+    summary: 'A calm 1-2-1 space to explore a question, decision or transition with curiosity rather than prediction.',
     body: 'Phil uses tarot to help you articulate what you already know, uncover what you may be overlooking and create a clearer next step. You leave with reflection, perspective and your own decisions — not somebody else’s prophecy.',
     points: ['30 or 60 minutes', 'Online or in person', 'Personal or professional focus', 'Confidential and conversational']
   }
@@ -60,7 +60,7 @@ const faqs = [
   ['Do I need to believe in tarot?', 'Not at all. You can approach a session as a mindfulness exercise, a coaching-style conversation or simply an interesting way to look at a situation differently.'],
   ['Which cards do you teach?', 'Phil’s training begins with the Major Arcana and the Marseille tradition, building confidence in symbolism, story, numbers and relationships between cards before expanding further.'],
   ['Can a workshop be tailored for a business or leadership team?', 'Yes. Sessions can focus on decision-making, clarity, creative thinking, communication, personal values or stepping away from habitual ways of seeing a problem.'],
-  ['Can I book online?', 'Yes. Personal readings and one-to-one tuition can be delivered online, and workshops can be arranged in person or virtually depending on the group.']
+  ['Can I book online?', 'Yes. Personal readings and 1-2-1 tuition can be delivered online, and workshops can be arranged in person or virtually depending on the group.']
 ];
 
 const testimonials = [
@@ -309,6 +309,10 @@ function App() {
             <p className="large-copy">Phil Macleod is the founder of Thought Leader | Thought Reader. For more than 20 years his work has centred on how people think, change and make decisions.</p>
             <p>His background spans hypnotherapy, psychology, NLP, coaching and performance. Tarot has become another part of that work: not as a way of claiming certainty about the future, but as a visual, structured way to unlock conversation and reflection.</p>
             <p>Phil’s style is calm, direct and practical. The aim is not to tell you what to do. It is to help you hear your own thinking more clearly and move forward with greater awareness.</p>
+            <div className="history-note">
+              <div className="section-label">A brief history</div>
+              <p>Tarot cards first appeared in 15th-century Italy as playing cards. Over time, their imagery became associated with symbolic and reflective practices. Phil draws on that visual language while leaving predictions and fixed answers aside.</p>
+            </div>
             <div className="about-stats">
               <div><strong>20+</strong><span>years supporting change</span></div>
               <div><strong>1-2-1</strong><span>personal & professional work</span></div>
@@ -346,7 +350,7 @@ function App() {
             <div><span>01</span><h3>Bring a focus</h3><p>A question, decision, challenge or simply an area of life you want to understand more clearly.</p></div>
             <div><span>02</span><h3>Explore the cards</h3><p>The imagery creates prompts for conversation, pattern recognition and different ways of seeing what is in front of you.</p></div>
             <div><span>03</span><h3>Reflect, don’t react</h3><p>There is room to notice what resonates, what does not, and what assumptions might be shaping your current view.</p></div>
-            <div><span>04</span><h3>Choose your next step</h3><p>You leave with your own insight and direction. The reading supports agency rather than taking it away.</p></div>
+            <div><span>04</span><h3>Choose your next step</h3><p>You leave with your own insight and direction. The reading helps you make your own decision; it does not make the decision for you.</p></div>
           </div>
         </section>
 
@@ -367,7 +371,7 @@ function App() {
             <div className="contact-copy">
               <div className="section-label light">Start a conversation</div>
               <h2>Curious what the cards might help you <em>notice?</em></h2>
-              <p>Book a personal reading, ask about one-to-one training, or tell Phil what you have in mind for a workshop.</p>
+              <p>Book a personal reading, ask about 1-2-1 training, or tell Phil what you have in mind for a workshop.</p>
               <div className="contact-options">
                 <span><CalendarDays size={18}/>Personal readings</span>
                 <span><GraduationCap size={18}/>1-2-1 tuition</span>
